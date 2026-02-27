@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <center><h1>User Registration</h1></center>
+
+    <center>
+        <form action="#" method="get">
+
+        <!-- full Name -->
+         <div>
+            <label for="FullName">Full Name:</label>
+            <input 
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            required>
+         </div>
+
+         <br><br>
+
+         <!-- password -->
+
+         <div>
+            <label for="password">Password:</label>
+            <input 
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number">
+         </div>
+
+         <br><br>
+
+         <!-- confirm Password -->
+          <div>
+            <label for="Confirm_password">Confirm Password</label>
+            <input 
+                type="password" 
+                id="confirm_password" 
+                name="confirm_password" 
+                required
+                minlength="8">
+          </div>
+
+          <br><br>
+          <!-- Age -->
+           <div>
+            <label for="Age">Age:</label>
+            <input 
+            type="number"
+            id="Age"
+            name="age"
+            required
+            min="13"
+            max="100">
+           </div>
+
+           <br><br>
+
+           <!-- country -->
+            <div>
+                <label for="country">Country:</label>
+                <select name="country" id="country" required>
+                    <option value="country">-- Select Your country</option>
+                    <option value="egypt">Egypt</option>
+                    <option value="Usa">USA</option>
+                    <option value="germany">Germany</option>
+                    <option value="Uk">United Kingdom</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <!-- Gender -->
+             <div>
+                <p>Gender:</p>
+
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+             </div>
+
+             <!-- interests -->
+              <div>
+                <p>interstes:</p>
+                <input type="checkbox" id="coding" name="interests" value="coding">
+                <label for="coding">Coding</label>
+
+                <input type="checkbox" id="sports" name="interests" value="sports">
+                <label for="sports">Sports</label>
+
+                <input type="checkbox" id="music" name="interests" value="music">
+                <label for="music">Music</label>
+              </div>
+
+              <br><br>
+
+              <!-- profile picture -->
+               <div>
+                <label for="profile_pic">Profile picture:</label>
+                <input 
+                type="file"
+                id="profile_pic"
+                name="profile_pic"
+                accept="image/*"
+                required>
+               </div>
+
+               <br><br>
+
+               <!-- bio -->
+                <div>
+                    <label for="bio">Short Bio:</label><br>
+                    <textarea 
+                    name="bio" 
+                    id="bio"
+                    rows="4"
+                    cols="40"
+                    placeholder="Tell Us about Your self"
+                    maxlength="300"
+                    required></textarea>
+                </div>
+                <br><br>
+
+                <!-- Terms -->
+
+                <div>
+                    <input type="checkbox" id="Terms" name="terms" required>
+                    <label for="terms">
+                        I Agree to the Terms and Conditions
+                    </label>
+                </div>
+
+                <br><br>
+
+                <!-- Submit Button -->
+                 <div>
+                    <button type="submit">Register</button>
+                    <button type="reset">Reset</button>
+                 </div>
+            
+
+    </form>
+    </center>
+<br><br>
+    <center>
+        <a href="Survey.html" target="_blank">
+            <button>Move To next Task</button>
+        </a>
+    </center>
+    
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelhamed Elshoraky — Frontend Portfolio</title>
+
+    <!-- Google Fonts -->
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+       <link rel="stylesheet" href="style portfolio.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip To Content.</a>
+
+    <!-- Top navbar (fixed) -->
+     <header class="navbar" role="banner">
+        <div class="nav-inner">
+            <div class="brand" aria-hidden="true">
+                <!-- Replace with your logo if available -->
+                 <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect width="24" height="24" rx="4" fill="currentColor"></rect>
+                 </svg>
+                 <span class="brand-name">Abdelhamed Elshoraky</span>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="btn" aria-pressed="false" aria-label="change color">🌙</button>
+                <button id="menuToggle" class="btn menu-btn" aria-expanded="false" aria-controls="sidebar" aria-label="Navigation menu">
+                     ☰
+                </button>
+            </div>
+        </div>
+     </header>
+
+     <div class="page">
+        <!-- sticky sidebar (or offcanvas on mobile) -->
+         <aside id="sidebar" class="sidebar" role="complementary" aria-label="profile">
+            <div class="profile">
+                <img src="AbdElhamed image.jpg" alt="Abdelhamed Photo" class="avatar" loading="lazy">
+                <h1 class="name">Abdelhamed Mohamed Elshoraky</h1>
+                <p class="role">Frontend Developer • Web Student</p>
+            </div>
+
+            <nav class="profile-nav" role="navigation" aria-label="Profile links">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="downloadResume">download Resume</a></li>
+                </ul>
+            </nav>
+
+            <div class="socials">
+                <a href="#" aria-label="GitHub" class="social">GitHub</a>
+                <a href="#" aria-label="LinkedIn" class="social">LinkedIn</a>
+            </div>
+         </aside>
+
+         <!-- main content -->
+          <main id="main" class="content" role="main">
+            <!-- About / Hero -->
+
+            <section id="about" class="hero">
+                <div class="hero-left">
+                    <h2 class="headline">Hello I'm <span class="accent">Abdelhamed</span></h2>
+                    <p class="lead">A front-end developer passionate about building fast, responsive, and user-friendly interfaces. I learn and implement modern technologies such as CSS Grid, Flexbox, and Vanilla JS.</p>
+                    <div class="cta">
+                        <a href="#projects" class="btn primary">See My Projects 👀</a>
+                        <a href="#contact" class="btn outline">contact Me 📞</a>
+                    </div>
+                </div>
+
+
+                <div class="hero-right">
+                    <div class="card quick">
+                        <h3>Short Information</h3>
+                        <ul>
+                            <li>country : Egypt</li>
+                            <li>Role: Frontend</li>
+                            <li>Available for: Freelane</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+             <section id="projects" class="section">
+                <h3 class="section-title">Projects</h3>
+                <div class="projects-grid">
+                    <!-- Project Item (كرر هذا البلوك لكل مشروع عند الاستبدال) -->
+
+                    <article class="project-card">
+                       <div class="project-body">
+                        <h4 class="project-title">project 1 - forms</h4>
+                        <p class="project-desc">User registration form</p>
+                         <div class="project-links">
+                        <a href="./task 7/register.html" class="link" target="_blank">Live</a>
+                        <!-- هرجعلك تاني  -->
+                        <a href="#" class="link">Code</a>
+                        </div>
+                       </div>
+                    </article>
+
+                     <article class="project-card">
+                        <div class="project-body">
+                        <h4 class="project-title"> project 2 - Shark tank</h4>
+                        <p class="project-desc">This project explains how to contact Shark Tank and find out more about them. </p>
+                        <div class="project-links">
+                            <a href="./Shark tank/SHarktank.html" class="link" target="_blank">Live</a>
+                            <!-- هرجعلك تاني  -->
+                            <a href="#" class="link">Code</a>
+                        </div>
+                        </div>
+                    </article>
+                </div>
+             </section>
+
+             <!-- Skills  -->
+              <section id="skills" class="section">
+                <h3 class="section-title">Skills</h3>
+                <ul class="skills-list">
+                    <li>HTML & css (responsive)</li>
+                    <li>css Grid / Flexbox</li>
+                    <li>Basic JavaScript</li>
+                    <li>version control (Git)</li>
+                </ul>
+              </section>
+
+              <!-- contact  -->
+               <section id="contact" class="section contact">
+                <h3 class="section-title">Contact</h3>
+                <form class="contact-form" action="#" onsubmit="alert('Replace action with your endpoint or mailto link.');" return false;>
+                     <label for="name">Name</label>
+                     <input id="name" name="name" required>
+
+                     <label for="email">Email</label>
+                     <input id="email" name="email" type="email" required>
+
+                     <label for="message">Message</label>
+                     <textarea id="message" name="message" rows="5" required></textarea>
+
+                     <button class="btn primary" type="submit">Send</button>
+                </form>
+               </section>
+               <footer class="footer" role="contentinfo">
+                    <p>© <span id="year"></span> Abdelhamed. All rights reserved.</p>
+               </footer>
+          </main>
+     </div>
+
+
+<!-- js: theme + menu persistennce + small helpers -->
+
+<script>
+    // Elements
+    const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const yearSpan = document.getElementById('year');
+
+    //put current year
+    yearSpan.textContent = new Date().getFullYear();
+
+    // apply saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme ==='dark' || (!savedTheme && prefersDark)){
+        body.classList.add('dark');
+        themeToggle.setAttribute('aria-pressed','true');
+        themeToggle.textContent = '☀️';       
+    }else{
+        themeToggle.setAttribute('aria-pressed','false');
+        themeToggle.textContent='🌙';
+    }
+
+    //theme toggle
+    themeToggle.addEventListener('click', () => {
+        const isDark = body.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    //Menu toggle for small screens
+    menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        sidebar.classList.toggle('open');
+    });
+
+    //close sidebar on content click (mobile)
+    document.addEventListener('click', (e) => {
+        const insideSidebar = sidebar.contains(e.target) || menuToggle.contains(e.target);
+        if (!insideSidebar && sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded','false');
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

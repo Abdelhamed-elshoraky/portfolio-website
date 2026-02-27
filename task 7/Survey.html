@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey Form</title>
+</head>
+<body>
+
+    <header>
+        <center><h1>Customer Satisfaction Survey</h1></center>
+        <p>Please fill out the form below to help us improve our service.</p>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+
+            <!-- rating -->
+
+            <section>
+                <label for="rating">
+                    How Would you rate your experience? (1 To 10)
+                </label>
+                <br>
+                <input 
+                type="range"
+                id="rating"
+                name="rating"
+                min="1"
+                max="10"
+                step="1"
+                value="5"
+                required
+                oninput="ratingValue.textContent = this.value">
+                <output id="ratingValue">5</output>
+            </section>
+
+            <br><br>
+
+            <!-- date visited -->
+             <section>
+                <label for="visit-date">Date Visited:</label>
+                <br>
+                <input 
+                type="date"
+                id="visit-date"
+                name="visit-date"
+                required>
+             </section>
+
+             <br><br>
+
+             <!-- time Picker -->
+              <section>
+                <label for="visit-time">Time of Visit:</label>
+                <br>
+                <input type="time" 
+                name="visit-time" 
+                id="visit-time"
+                required>
+              </section>
+              <br><br>
+
+              <!-- favorite Color -->
+               <section>
+                <label for="fav-color">Select Your Favorite Color</label>
+                <br>
+                <input 
+                type="color"
+                id="fav-color"
+                name="favorite_color"
+                value="#0000ff">
+               </section>
+
+               <br><br>
+
+               <!-- Search Field -->
+
+               <section>
+                <label for="search-service">Search for a service you used:</label>
+                <br>
+                <input 
+                type="search"
+                id="search-service"
+                name="search-service"
+                placeholder="Search..."
+                list="services">
+
+                <!-- Datalist Suggestions -->
+
+                <datalist id="services">
+                    <option value="Web Development">
+                    <option value="Mobile App Development">
+                    <option value="UI/UX Dsign">
+                    <option value="Digital Marketing">
+                    <option value="Customer Support">
+                </datalist>
+               </section>
+               <br><br>
+
+               <!-- submit -->
+                <section>
+                    <button type="submit">Submit Survey</button>
+                    <button type="reset">RESET</button>
+                </section>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Customer Survey. All rights reserved.</p>
+    </footer>
+    <br><br><br>
+
+    <center>
+    <a href="portfolio.html" target="_blank">
+        <button>Move to Abdelhamed's Portfolio</button>
+    </a>
+    </center>
+</body>
+</html>
